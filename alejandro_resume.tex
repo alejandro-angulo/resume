@@ -1,0 +1,177 @@
+\documentclass{article}
+
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage[letterpaper, portrait, margin=0.5in]{geometry}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{titlesec}
+\usepackage{comment}
+\usepackage[usenames, dvipsnames]{xcolor}
+
+\definecolor{blue}{HTML}{2079C7}
+\definecolor{gray}{HTML}{666666}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\pagenumbering{gobble}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\setlist[itemize]{noitemsep}
+
+\titleformat{\section}
+	{\color{blue}\normalfont\Large\bfseries}
+	{\color{blue}\thesection}{1em}{\large\uppercase}
+\titleformat{\subsection}
+	{\normalfont\Large\bfseries}
+	{\thesection}{1em}{\normalsize}
+\titleformat{\subsubsection}
+	{\color{gray}\normalfont\Large\bfseries}
+	{\color{gray}\thesection}{1em}{\small}
+
+\titlespacing*{\section}
+	{0em}{0em}{0em}
+\titlespacing*{\subsection}
+	{0em}{1em}{0em}
+\titlespacing*{\subsubsection}
+	{0em}{0em}{0em}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{\textwidth}
+\begin{tabular}{L{.4\textwidth} l l}
+	\multirow{2}{*}{\Huge{ \textbf{Alejandro Angulo}}} &  \href{https://github.com/alejandro-angulo}{https://github.com/alejandro-angulo} & \href{https://alejandr0angul0.dev}{https://alejandr0angul0.dev}\\
+	& \href{mailto:\email}{\email} & \phonenumber\\
+	\hline
+\end{tabular}
+\vspace{1em}
+\end{minipage}
+\begin{minipage}[t]{.8\textwidth}
+\section*{Professional Experience}
+\subsection*{Everbridge (formerly NC4) --- \textit{Software Engineer}}
+\subsubsection*{October 2018 - Present}
+\parbox[t]{.5\textwidth}{\raggedright%
+\begin{itemize}
+\vspace{-0.5em}
+	\item Develop and maintain Python and PHP applications
+	\item Migrate VCS from SVN to Git
+	\item Re-architect Python application to improve modularity
+	\item Introduce best practices (follow PEP8 for Python, begin linting code, etc.)
+\end{itemize}}
+\parbox[t]{.5\textwidth}{\raggedright%
+\begin{itemize}
+\vspace{-1.5em}
+	\item Streamline code review process (integrate with source control)
+	\item Maintain and develop a RESTful API written in Python capable of generating reports for end users
+	\item Work with product managers to implement "behind the scenes" changes (upgrading language versions, databases, etc.)
+\end{itemize}}
+\vspace{-1.5em}
+\subsection*{MedQIA --- \textit{Software Engineer}}
+\subsubsection*{April 2017 - September 2018}
+\parbox[t]{.5\textwidth}{\raggedright%
+\begin{itemize}
+\vspace{-1.5em}
+	\item Develop and maintain a Java desktop application used by clinical readers and lab technologists to assist in clinical trials
+	\item Document and validate systems to comply with FDA regulations
+	\item Work on Python applications that keep track of the status of scans
+	\item Maintain and develop a web client written in PHP and JavaScript that provides a dashboard for the data team
+\end{itemize}}
+\parbox[t]{.5\textwidth}{\raggedright%
+\vspace{-1.5em}
+\begin{itemize}
+	\item Maintain and develop a RESTful API written in Python capable of generating reports for end users
+	\item Write Python scripts that plug in to a Java application in order to provide additional functionality (dynamic loading of patients, automating certain tasks for end users, etc.)
+	\item Automate build process for Java applications using Gradle
+\end{itemize}}
+\vspace{-1.5em}
+\subsection*{UC Davis College of Engineering IT Shared Services --- \textit{Student Web Developer and Applications Programmer}}
+\subsubsection*{May 2014 - April 2017}
+\parbox[t]{.5\textwidth}{\raggedright%
+\begin{itemize}
+\vspace{-1.5em}
+	\item Migrate ITS's existing websites to a new server
+	\item Write PHP scripts to scrape data from third-party sites in order to visualize energy consumption
+\end{itemize}}
+\parbox[t]{.5\textwidth}{\raggedright%
+\vspace{-1.5em}
+\begin{itemize}
+	\item Ensure compliance with security standards
+	\item Design responsive layouts using CSS
+	\item Manage departmental sites (most running WordPress)
+\end{itemize}}
+\section*{Education}
+\subsection*{UC Davis --- \textit{B.S. in Applied Physics}}
+\subsubsection*{Sep 2012 - Jun 2016}
+\parbox[t]{.5\textwidth}{\raggedright%
+\textbf{Major Courses}
+\begin{itemize}
+\vspace{-0.6em}
+	\item Data Structures and Programming
+	\item Algorithm Design and Analysis
+	\item Computational Methods in Physics
+\end{itemize}}
+\hspace{0.3cm}
+\parbox[t]{.5\textwidth}{\raggedright%
+\textbf{Electives}
+\begin{itemize}[topsep=0cm]
+	\item Theory of Computation
+	\item Numerical Analysis
+	\item Quantum Mechanics
+\end{itemize}
+}
+\section*{Projects}
+\subsection*{kilonull --- \textit{Personal Website}}
+\subsubsection*{\href{https://kilonull.com/}{https://kilonull.com/}}
+\begin{itemize}
+	\item CMS written in Python (Django app)
+	\item Server runs NGINX in conjunction with uWSGI on the backend
+	\item Tests set up to run using tox on Travis CI
+\end{itemize}
+\subsection*{List Category Posts --- \textit{WordPress Plugin}}
+\subsubsection*{\href{https://wordpress.org/plugins/list-category-posts/}{https://wordpress.org/plugins/list-category-posts/}}
+\begin{itemize}
+	\item Submit bug fixes and enhancements to an open source WordPress plugin written in PHP
+\end{itemize}
+\begin{comment}
+\subsection*{Archfeed --- \textit{CLI RSS Reader}}
+\subsubsection*{\href{https://github.com/vacuus/archfeed}{https://github.com/vacuus/archfeed}}
+\begin{itemize}
+	\item RSS reader written in C
+	\item Fetches latest news for the Arch Linux distribution.
+\end{itemize}
+\end{comment}
+\subsection*{Simulations for Physics Students --- \textit{Interactive Visualizations}}
+\begin{itemize}
+	\item Developed two visualizations written in JavaScript to help students understand physical concepts.
+	\item Used Three.js library to simulate detection of active galactic nuclei.
+	\item Used Kinetic.js library to visualize how photon count can be used to detect a star's radius.
+\end{itemize}
+\end{minipage}%
+\hspace*{0.5cm}
+\begin{minipage}[t]{.2\textwidth}
+\section*{Languages}
+\vspace{0.8em}
+\begin{itemize}
+	\item Python
+	\item PHP
+	\item JavaScript
+	\item SQL
+	\item BASH
+	\item Java
+\end{itemize}
+\section*{Toolset}
+\vspace{0.8em}
+\begin{itemize}
+	\item Apache
+	\item Django
+	\item Git
+	\item \LaTeX
+	\item NGINX
+	\item Linux
+\end{itemize}
+\end{minipage}
+\end{document}
