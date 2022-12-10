@@ -20,11 +20,10 @@
           inherit (pkgs.texlive) scheme-full latex-bin latexmk;
         };
         vars = ["email" "phonenumber"];
-        # Create definitions like \def\email{1}
-        # Each variable will be set to the command line argument at the
-        # variable's position (first arg passed to resume generator will fill
-        # in usages of \email in the tex flie)
-        texvars = toString (pkgs.lib.imap1 (i: n: ''\def\${n}{${"$" + (toString i)}}'') vars);
+        # Create definitions like \def\email{$EMAIL}
+        # Each \email command in the tex document will be populated by an EMAIL
+        # variable (can be set as an environment variable)
+        texvars = toString (pkgs.lib.concatMapStrings (x: ''\def\${x}{${"$" + pkgs.lib.toUpper x}}'') vars);
       in rec {
         packages = {
           alejandro-resume = pkgs.stdenvNoCC.mkDerivation rec {
