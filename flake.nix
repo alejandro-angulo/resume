@@ -14,6 +14,9 @@
     with flake-utils.lib;
       eachSystem allSystems (system: let
         pkgs = nixpkgs.legacyPackages.${system};
+        nerdfonts-hack = pkgs.nerdfonts.override {
+          fonts = ["Hack"];
+        };
         tex = pkgs.texlive.combine {
           # I'm being lazy and using scheme-full instead of specifying what's
           # actually required
@@ -29,7 +32,7 @@
           alejandro-resume = pkgs.stdenvNoCC.mkDerivation rec {
             name = "alejandro-resume";
             src = self;
-            propogatedBuildInputs = [pkgs.coreutils tex];
+            propogatedBuildInputs = [pkgs.coreutils nerdfonts-hack tex];
             phases = ["unpackPhase" "buildPhase" "installPhase"];
             SCRIPT = ''
               #!/usr/bin/env bash
@@ -43,6 +46,7 @@
               mkdir -p "$DIR/.texcache/texmf-var"
 
               env TEXFMHOME="$DIR/.texcache" TEXMFVAR="$DIR/.texcache/texmf-var" \
+                  OSFONTDIR=${nerdfonts-hack}/share/fonts
                 latexmk -interaction=nonstopmode -pdf -lualatex \
                 -output-directory="$DIR" \
                 -pretex="${texvars}"\
