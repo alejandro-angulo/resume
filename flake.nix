@@ -39,8 +39,17 @@
 
               prefix=${builtins.placeholder "out"}
               export PATH="${pkgs.lib.makeBinPath propogatedBuildInputs}";
+              DEBUG=false
               DIR=$(mktemp -d)
               RES=$(pwd)/alejandro_resume.pdf
+              LOG=$(pwd)/alejandro_resume.log
+
+              while getopts 'd' flag; do
+                case $flag in
+                  'd') DEBUG=true;;
+                  *) echo 'TODO: Add usage';;
+                esac
+              done
 
               cd $prefix/share
               mkdir -p "$DIR/.texcache/texmf-var"
@@ -52,8 +61,14 @@
                 -pretex="${texvars}"\
                 -usepretex alejandro_resume.tex
 
-              mv "$DIR/alejandro_resume.pdf" $RES
+              mv "$DIR/alejandro_resume.pdf" "$RES"
+
+              if $DEBUG; then
+                mv "$DIR/alejandro_resume.log" "$LOG"
+              fi
+
               rm -rf $DIR
+              echo $DEBUG
             '';
             buildPhase = ''
               printenv SCRIPT > alejandro-resume
