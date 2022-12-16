@@ -68,7 +68,6 @@
               fi
 
               rm -rf $DIR
-              echo $DEBUG
             '';
             buildPhase = ''
               printenv SCRIPT > alejandro-resume
