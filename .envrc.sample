@@ -1,0 +1,6 @@
+# For use with direnv
+# Copy this to sample to .envrc and edit
+use flake
+
+export EMAIL='e@mail.com'
+export PHONENUMBER='(555) 555-5555'
