@@ -18,9 +18,7 @@
           fonts = ["Hack"];
         };
         tex = pkgs.texlive.combine {
-          # I'm being lazy and using scheme-full instead of specifying what's
-          # actually required
-          inherit (pkgs.texlive) scheme-full latex-bin latexmk;
+          inherit (pkgs.texlive) scheme-basic latex-bin latexmk enumitem multirow titlesec xcolor fontspec;
         };
         vars = ["email" "phonenumber"];
         # Create definitions like \def\email{$EMAIL}
