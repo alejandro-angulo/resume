@@ -2,9 +2,12 @@
     "version": "0.2",
     "language": "en",
     "words": [
+        "Everbridge",
         "ITS's",
         "alacritty",
-        "Everbridge",
+        "crkbd",
+        "dotfiles",
+        "homelab",
         "toolset"
     ],
     "flagWords": []
