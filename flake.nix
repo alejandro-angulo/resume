@@ -44,10 +44,27 @@
               RES=$(pwd)/alejandro_resume.pdf
               LOG=$(pwd)/alejandro_resume.log
 
-              while getopts 'd' flag; do
+              function usage {
+                echo "Usage: $(basename $0) [-h] [-d] [-e EMAIL] [-p PHONENUMBER]"
+                echo '    -h              Prints this usage message.'
+                echo ""
+                echo '    -d              Saves latexmk log file (will be named alejandro_resume.log)'
+                echo ""
+                echo '    -e EMAIL        Sets email address used when building document.'
+                echo '                    Can also be set with EMAIL environment variable.'
+                echo ""
+                echo '    -p PHONENUMBER  Sets phone number used when building the document.'
+                echo '                    Can also be set with PHONENUMBER environment variable.'
+              }
+
+              while getopts ':de:p:h' flag; do
                 case $flag in
                   'd') DEBUG=true;;
-                  *) echo 'TODO: Add usage';;
+                  # Overrides EMAIL and PHONENUMBER envvars if set
+                  'e') EMAIL="$OPTARG";;
+                  'p') PHONENUMBER="$OPTARG";;
+                  'h') usage && exit;;
+                  ?) usage && exit 1;;
                 esac
               done
 

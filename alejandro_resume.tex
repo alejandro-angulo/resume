@@ -61,7 +61,7 @@
 \fancyfoot[L]{
     \small{The source code for this document is available at \href{https://github.com/alejandro-angulo/resume}{https://github.com/alejandro-angulo/resume}}\\
     \small{If you have \href{https://nixos.wiki/wiki/Nix_package_manager}{nix} installed you can run the command below to generate the latest version of this document}\\
-    \scriptsize{\texttt{env EMAIL='\email' PHONENUMBER='\phonenumber' nix run --refresh --experimental-features 'nix-command flakes' github:alejandro-angulo/resume/main}}
+    \scriptsize{\texttt{nix run --refresh --experimental-features 'nix-command flakes' github:alejandro-angulo/resume/main -- -e '\email' -p '\phonenumber'}}
 }
 \vspace*{0.175in}
 \hspace*{-2em}
