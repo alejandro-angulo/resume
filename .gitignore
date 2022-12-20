@@ -1,3 +1,5 @@
 result
-alejandro_resume.pdf
-alejandro_resume.log
+alejandro_resume.*
+!alejandro_resume.tex
+
+.vim/

@@ -2,7 +2,7 @@
 
 \usepackage{array}
 \usepackage{enumitem}
-\usepackage[letterpaper, portrait, top=1in, right=0.5in, left=0.5in, bottom=1in]{geometry}
+\usepackage[letterpaper, portrait, top=1in, right=0.5in, left=0.5in, bottom=0in]{geometry}
 \usepackage[colorlinks=true, linkcolor=linkColor, urlcolor=linkColor, citecolor=linkColor, anchorcolor=linkColor]{hyperref}
 \usepackage{multirow}
 \usepackage{titlesec}
@@ -25,6 +25,7 @@
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
+\setlength{\headheight}{69pt}
 \setlist[itemize]{noitemsep, leftmargin=1em}
 
 \titleformat{\section}
@@ -55,19 +56,19 @@
         & {\small{\texttt{}} \space \href{mailto:\email}\email} & \small{\texttt{}} \space \phonenumber\\
     \end{tabular}
     \\[0.8em]
-    I'm excited about writing maintainable software. I am looking to join a team that likes to follow "best practices" (whatever that may be for their respective domain) and values having a good developer experience. I enjoyed tinkering with computers even before I became a professional software engineer and I hope to apply those skills in my professional work.
+    I'm excited about writing maintainable software. I am looking to join a team that likes to follow ``best practices'' (whatever that may be for their respective domain) and values having a good developer experience. I enjoyed tinkering with computers even before I became a professional software engineer and I hope to apply those skills in my professional work.
 }
 \fancyfoot[L]{
     \small{The source code for this document is available at \href{https://github.com/alejandro-angulo/resume}{https://github.com/alejandro-angulo/resume}}\\
     \small{If you have \href{https://nixos.wiki/wiki/Nix_package_manager}{nix} installed you can run the command below to generate the latest version of this document}\\
-    \scriptsize{\texttt{nix run --refresh --experimental-features 'nix-command flakes' github:alejandro-angulo/resume/main -- -e '\email' -p '\phonenumber'}}
+    \scriptsize{\texttt{nix run --refresh --experimental-features 'nix-command flakes' github:alejandro-angulo/resume/main -- -e '\email' -p '\phonenumber'}}  % chktex 08 chktex 32
 }
-\vspace*{0.175in}
+\vspace*{-0.5in}
 \hspace*{-2em}
 \begin{minipage}[t]{.6\textwidth}
 \section*{Professional Experience}
 \subsection*{Sure  --- \textit{Senior Software Engineer}}
-\subsubsection*{February 2020 - Present}
+\subsubsection*{February 2020--Present}
 \begin{itemize}
     \item Develop and maintain a backend (written in Python, using the Django framework) to support an insurance policy's lifecycle (quoting, binding, renewals, etc)
     \item Help unstick teammates with various types of problems (failing test cases, environment troubleshooting, suggestions on implementation, etc)
@@ -76,7 +77,7 @@
     \item Pushing for more/better documentation and introduced additional tooling to help (configured repos with sphinx and set up CI pipelines to generate OpenAPI schemas)
 \end{itemize}
 \subsection*{Everbridge (formerly NC4) --- \textit{Software Engineer}}
-\subsubsection*{October 2018 - February 2020}
+\subsubsection*{October 2018--February 2020}
 \begin{itemize}
     \item Developed and maintained Python and PHP applications used to help notify clients of potential issues (fires, police activity, etc)
     \item Migrated version control system from SVN to Git
@@ -84,10 +85,10 @@
     \item Introduced best practices (follow PEP8 for Python, begin linting code, etc.)
     \item Streamlined code review process (integrated with source control)
     \item Maintained and developed a RESTful API written in Python capable of generating reports for end users
-    \item Worked with product managers to implement "behind the scenes" changes (upgrading language versions, databases, etc.)
+    \item Worked with product managers to implement ``behind the scenes'' changes (upgrading language versions, databases, etc.)
 \end{itemize}
 \subsection*{MedQIA --- \textit{Software Engineer}}
-\subsubsection*{April 2017 - September 2018}
+\subsubsection*{April 2017--September 2018}
 \begin{itemize}
     \item Developed and maintained a Java desktop application used by clinical readers and lab technologists to assist in clinical trials
     \item Documented and validated systems to comply with FDA regulations
@@ -98,7 +99,7 @@
     \item Automated build process for Java applications using Gradle
 \end{itemize}
 \subsection*{UC Davis College of Engineering IT Shared Services --- \textit{Student Web Developer and Applications Programmer}}
-\subsubsection*{May 2014 - April 2017}
+\subsubsection*{May 2014--April 2017}
 \begin{itemize}
     \item Managed departmental websites (most running WordPress)
     \item Wrote PHP scripts to scrape data from third-party sites in order to visualize energy consumption
@@ -111,7 +112,7 @@
 \section*{Personal Projects}
 \begin{itemize}
     \item Built own keyboard (\href{https://github.com/alejandro-angulo/qmk_firmware/tree/master/keyboards/crkbd/keymaps/alejandro-angulo}{firmware})
-    \item Maintaining system configuration with nix (\href{https://github.com/alejandro-angulo/dotfiles/tree/nix-config}{dotfiles})
+    \item Maintaining system configuration with nix (\href{https://github.com/alejandro-angulo/dotfiles/tree/nix-config}{dotfiles}) wow some more stuff here
     \item Administering a home server that runs a bunch of docker containers and acts as a NAS
 \end{itemize}
 \section*{Toolset}
@@ -127,6 +128,6 @@
 \section*{Education}
 \subsection*{UC Davis}
 \subsubsection*{B.S. in Applied Physics}
-\subsubsection*{2012 - 2016}
+\subsubsection*{2012--2016}
 \end{minipage}
 \end{document}

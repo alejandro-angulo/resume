@@ -18,7 +18,7 @@
           fonts = ["Hack"];
         };
         tex = pkgs.texlive.combine {
-          inherit (pkgs.texlive) scheme-basic latex-bin latexmk enumitem multirow titlesec xcolor fontspec;
+          inherit (pkgs.texlive) scheme-basic latex-bin latexmk enumitem multirow titlesec xcolor fontspec chktex latexindent;
         };
         vars = ["email" "phonenumber"];
         # Create definitions like \def\email{$EMAIL}
