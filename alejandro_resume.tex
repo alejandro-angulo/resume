@@ -53,7 +53,7 @@
 \fancyhead[L]{
 	\begin{tabular}{L{.4\textwidth} l l}
 		\multirow{2}{*}{\Huge{\textbf{Alejandro Angulo} }} & \small{\texttt{}} \space \href{https://github.com/alejandro-angulo}{https://github.com/alejandro-angulo} & \small{\texttt{爵}} \space \href{https://alejandr0angul0.dev}{https://alejandr0angul0.dev} \\
-		                                                   & {\small{\texttt{}} \space \href{mailto:\email}\email}                                                    & \small{\texttt{}} \space \phonenumber                                                     \\
+		                                                   & {\small{\texttt{}} \space \href{mailto:\email}\email}                                                    & \small{\texttt{}} \space \phonenumber                                                    \\ % chktex 1
 	\end{tabular}
 	\\[0.8em]
 	I'm excited about writing maintainable software. I am looking to join a team that likes to follow ``best practices'' (whatever that may be for their respective domain) and values having a good developer experience. I enjoyed tinkering with computers even before I became a professional software engineer and I hope to apply those skills in my professional work.
@@ -61,7 +61,7 @@
 \fancyfoot[L]{
 	\small{The source code for this document is available at \href{https://github.com/alejandro-angulo/resume}{https://github.com/alejandro-angulo/resume}}\\
 	\small{If you have \href{https://nixos.wiki/wiki/Nix_package_manager}{nix} installed you can run the command below to generate the latest version of this document}\\
-	\scriptsize{\texttt{nix run --refresh --experimental-features 'nix-command flakes' github:alejandro-angulo/resume/main -- -e '\email' -p '\phonenumber'}}  % chktex 08 chktex 32
+	\scriptsize{\texttt{nix run --refresh --experimental-features 'nix-command flakes' github:alejandro-angulo/resume/main --  \textbackslash\\\ \ -e '\email' -p '\phonenumber'}}  % chktex 8 chktex 32
 }
 \vspace*{-0.5in}
 \hspace*{-2em}
@@ -128,7 +128,6 @@
 		      (\href{https://github.com/alejandro-angulo/qmk_firmware/tree/master/keyboards/crkbd/keymaps/alejandro-angulo}{firmware})
 		\item Maintaining system configuration with nix
 		      (\href{https://github.com/alejandro-angulo/dotfiles/tree/nix-config}{dotfiles})
-		      wow some more stuff here
 		\item Administering a home server that runs a bunch of docker containers and acts as
 		      a NAS
 	\end{itemize}
