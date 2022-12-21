@@ -1,5 +1,10 @@
+# Build artifacts
 result
 alejandro_resume.*
 !alejandro_resume.tex
 
+# Editor settings
 .vim/
+
+# latexindent logfile
+indent.log

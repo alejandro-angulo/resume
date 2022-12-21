@@ -10,3 +10,14 @@ repos:
     rev: 3.0.0
     hooks:
       - id: alejandra-system
+  - repo: https://github.com/cmhughes/latexindent.pl
+    rev: V3.19.1
+    hooks:
+      - id: latexindent
+  - repo: local
+    hooks:
+      - id: chktex
+        name: chktex
+        entry: chktex
+        language: system
+        types: [tex]
