@@ -70,7 +70,7 @@
               mkdir -p "$DIR/.texcache/texmf-var"
 
               env TEXFMHOME="$DIR/.texcache" TEXMFVAR="$DIR/.texcache/texmf-var" \
-                  OSFONTDIR=${nerdfonts-hack}/share/fonts
+                  OSFONTDIR=${nerdfonts-hack}/share/fonts \
                 latexmk -interaction=nonstopmode -pdf -lualatex \
                 -output-directory="$DIR" \
                 -pretex="${texvars}"\
