@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Following variables are set via sed in the buildPhase step
 PREFIX=""
 # Intentionally overriding PATH so supressing shellcheck
