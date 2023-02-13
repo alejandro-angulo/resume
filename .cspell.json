@@ -15,6 +15,7 @@
         "latexindent",
         "latexmk",
         "PHONENUMBER",
+        "shellcheck",
         "texlab",
         "toolset"
     ],

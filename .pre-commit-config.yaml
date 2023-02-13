@@ -21,3 +21,8 @@ repos:
         entry: chktex
         language: system
         types: [tex]
+      - id: shellcheck
+        name: shellcheck
+        entry: shellcheck
+        language: system
+        types: [shell]
