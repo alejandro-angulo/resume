@@ -21,6 +21,9 @@
     ],
     "flagWords": [],
     "ignoreWords": [
+        "alejandr",
+        "angul",
+        "cachix",
         "lualatex",
         "nonstopmode",
         "pretex",
