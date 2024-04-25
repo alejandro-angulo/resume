@@ -1,12 +1,15 @@
 name: "Build"
-on:
-  pull_request:
+on: [pull_request, push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: cachix/install-nix-action@v19
+      - uses: cachix/install-nix-action@v25
+      - uses: cachix/cachix-action@v14
+        with:
+          name: alejandr0angul0-resume
+          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
       - run: nix build
       - run: nix flake check
       - run: nix run
@@ -18,7 +21,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: cachix/install-nix-action@v19
+      - uses: cachix/install-nix-action@v25
 
       - run: echo "PY=$(python -VV | sha256sum | cut -d' ' -f1)" >> $GITHUB_ENV
 
