@@ -1,19 +1,6 @@
 name: "Build"
 on: [pull_request, push]
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: cachix/install-nix-action@v25
-      - uses: cachix/cachix-action@v14
-        with:
-          name: alejandr0angul0-resume
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-      - run: nix build
-      - run: nix flake check
-      - run: nix run
-
   pre-commit-hooks:
     runs-on: ubuntu-latest
     steps:
@@ -33,3 +20,17 @@ jobs:
 
       - name: Run pre-commit hooks
         run: nix develop --command -- pre-commit run --show-diff-on-failure --color=always --from-ref origin/main --to-ref "$GITHUB_SHA"
+
+  build:
+    needs: pre-commit-hooks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v25
+      - uses: cachix/cachix-action@v14
+        with:
+          name: alejandr0angul0-resume
+          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+      - run: nix build
+      - run: nix flake check
+      - run: nix run
