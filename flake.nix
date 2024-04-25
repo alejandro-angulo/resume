@@ -2,13 +2,12 @@
   description = "Resume";
 
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs/nixos-unstable;
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
   outputs = {
     self,
     nixpkgs,
-    flake-utils,
   }: let
     pkgs = import nixpkgs {
       inherit system;
@@ -19,7 +18,7 @@
       fonts = ["Hack"];
     };
     tex = pkgs.texlive.combine {
-      inherit (pkgs.texlive) scheme-basic latex-bin latexmk enumitem multirow titlesec xcolor fontspec chktex latexindent;
+      inherit (pkgs.texlive) scheme-basic latex-bin latexmk enumitem multirow titlesec xcolor fontspec chktex latexindent etoolbox;
     };
     vars = ["email" "phonenumber"];
     # Create definitions like \def\email{$EMAIL}
