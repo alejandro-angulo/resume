@@ -5,6 +5,11 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
+  nixConfig = {
+    extra-trusted-public-keys = "alejandr0angul0-resume.cachix.org-1:tLOx+VCWz+yMyONGbgPnhQ3F3E4GylO8QAFxoCwnC34=";
+    extra-substituters = "https://alejandr0angul0-resume.cachix.org";
+  };
+
   outputs = {
     self,
     nixpkgs,
