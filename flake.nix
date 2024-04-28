@@ -60,6 +60,7 @@
           };
 
         default = self.packages.${system}.alejandro-resume;
+        devenv-up = self.devShells.${system}.default.config.procfileScript;
       }
     );
 
