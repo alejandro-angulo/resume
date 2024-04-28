@@ -33,5 +33,5 @@ jobs:
           name: alejandr0angul0-resume
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
       - run: nix build
-      - run: nix flake check
+      - run: nix flake check --impure
       - run: nix run
