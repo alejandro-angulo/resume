@@ -2,7 +2,7 @@
 
 \usepackage{array}
 \usepackage{enumitem}
-\usepackage[letterpaper, portrait, top=1in, right=0.5in, left=0.5in, bottom=2in]{geometry}
+\usepackage[letterpaper, portrait, top=0.5in, right=0.5in, left=0.5in, bottom=2.5in]{geometry}
 \usepackage[colorlinks=true, linkcolor=linkColor, urlcolor=linkColor, citecolor=linkColor, anchorcolor=linkColor]{hyperref}
 \usepackage{multirow}
 \usepackage{titlesec}
@@ -55,32 +55,31 @@
 		\multirow{2}{*}{\Huge{\textbf{Alejandro Angulo} }} & \small{\texttt{}} \space \href{https://github.com/alejandro-angulo}{https://github.com/alejandro-angulo} & \small{\texttt{󰖟}} \space \href{https://alejandr0angul0.dev}{https://alejandr0angul0.dev} \\
 		                                                   & {\small{\texttt{}} \space \href{mailto:\email}\email}                                                    & \small{\texttt{}} \space \phonenumber                                                    \\ % chktex 1
 	\end{tabular}
-	\\[0.8em]
-	I'm excited about writing maintainable software. I am looking to join a team that likes to follow ``best practices'' (whatever that may be for their respective domain) and values having a good developer experience. I enjoyed tinkering with computers even before I became a professional software engineer and I hope to apply those skills in my professional work.
 }
 \fancyfoot[L]{
-	\small{The source code for this document is available at \href{https://github.com/alejandro-angulo/resume}{https://github.com/alejandro-angulo/resume}}\\
-	\small{If you have \href{https://nixos.wiki/wiki/Nix_package_manager}{nix} installed you can run the command below to generate the latest version of this document}\\
-	\scriptsize{\texttt{nix run --refresh --experimental-features 'nix-command flakes' github:alejandro-angulo/resume/main --  \textbackslash\\\ \ -e '\email' -p '\phonenumber'}}  % chktex 8 chktex 32
+	The source code for this document is available at \href{https://github.com/alejandro-angulo/resume}{https://github.com/alejandro-angulo/resume}\\
+	If you have \href{https://nixos.wiki/wiki/Nix_package_manager}{nix} installed you can run the command below to generate the latest version\\
+	\texttt{nix run --refresh --experimental-features 'nix-command flakes' github:alejandro-angulo/resume/main --  \textbackslash\\\ \ -e '\email' -p '\phonenumber'}  % chktex 8 chktex 32
 }
-\vspace*{-0.5in}
+\vspace*{-0.3in}
 \hspace*{-2em}
 \begin{minipage}[t]{.6\textwidth}
 	\section*{Professional Experience}
 	\subsection*{Sure  --- \textit{Staff Software Engineer}}
 	\subsubsection*{February 2020--Present}
 	\begin{itemize}
-		\item Develop and maintain a backend (written in Python, using the Django framework)
-		      to support an insurance policy's lifecycle (quoting, binding, renewals, etc)
+		\item Developing and maintaining a backend that supports managing an
+		      insurance policy's lifecycle (quoting, binding, renewals, etc.)
+		\item Working on transitioning toward a more data-driven design
+		      (drastically reducing the time to onboard new clients)
 		\item Help unstick teammates with various types of problems (failing test cases,
-		      environment troubleshooting, suggestions on implementation, etc)
-		\item Introduced tooling to enforce best practices (set up pre-commit hooks to run
-		      linters/formatters and updated CI pipelines to run these checks as well)
-		\item Configured CI workflows to push wheels of internal applications to our private
-		      package index
-		\item Pushing for more/better documentation and introduced additional tooling to help
-		      (configured repos with sphinx and set up CI pipelines to generate OpenAPI
-		      schemas)
+		      environment troubleshooting, suggestions on implementation, etc.)
+		\item Investing in our developer experience (setting up tooling for
+		      linting/formatting, investigating slow CI pipelines, improving
+		      build
+		      process, adding tooling to generate documentation, etc.)
+		\item Participating in setting technical direction for teams across the
+		      division
 	\end{itemize}
 	\subsection*{Everbridge (formerly NC4) --- \textit{Software Engineer}}
 	\subsubsection*{October 2018--February 2020}
@@ -122,23 +121,34 @@
 \end{minipage}
 \hspace{0.08\textwidth}
 \begin{minipage}[t]{.3\textwidth}
-	\section*{Personal Projects}
+	\section*{About Me}
+	I'm a computer nerd. I've always enjoyed tinkering with computers and now I
+	get to make a living from it. I'm excited about writing maintainable
+	software and am looking to join a team that values having a good developer
+	experience.
+
+	Outside of my professional work, lately I've taken an interest in
+	\href{https://nixos.org/}{nix}. I've been leveraging it to maintain my
+	personal servers/machines (I self host a bunch of services in my private
+	network). I've dabbled a bit in hardware as well and I built the keyboard
+	I'm typing on right now. If a computer is involved, I'm probably interested
+	in learning more!
+
+	\vspace{1em}
+	\section*{Related links}
 	\begin{itemize}
-		\item Built own keyboard
-		      (\href{https://github.com/alejandro-angulo/qmk_firmware/tree/master/keyboards/crkbd/keymaps/alejandro-angulo}{firmware})
-		\item Maintaining system configuration with nix
-		      (\href{https://github.com/alejandro-angulo/dotfiles/tree/nix-config}{dotfiles})
-		\item Administering a home server that runs a bunch of docker containers and acts as
-		      a NAS
+		\item \href{https://github.com/alejandro-angulo/qmk_firmware/tree/master/keyboards/crkbd/keymaps/alejandro-angulo}{keyboard configuration}
+		\item \href{https://github.com/alejandro-angulo/dotfiles/}{nix configuration}
 	\end{itemize}
 	\section*{Toolset}
+	Some tools I use regularly in my current role:
+	\vspace{-0.6em}
 	\begin{itemize}
-		\item alacritty
 		\item docker
 		\item git
 		\item linux
-		\item sway
 		\item tmux
+		\item python
 		\item vim
 	\end{itemize}
 	\section*{Education}
