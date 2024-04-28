@@ -21,7 +21,10 @@ jobs:
 
   build:
     needs: pre-commit-hooks
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        runner: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.runner }}
     steps:
       - uses: actions/checkout@v3
       - uses: cachix/install-nix-action@v25
