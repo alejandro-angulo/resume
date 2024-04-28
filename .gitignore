@@ -8,3 +8,7 @@ alejandro_resume.*
 
 # latexindent logfile
 indent.log
+
+# devenv
+.devenv
+.pre-commit-config.yaml
