@@ -1,3 +1,5 @@
+![Build workflow](https://github.com/alejandro-angulo/resume/actions/workflows/build.yml/badge.svg)
+
 # Resume
 
 This repository generates a PDF of my resume using
