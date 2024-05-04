@@ -6,6 +6,16 @@ article](https://flyx.org/nix-flakes-latex/) to help me create a nix flake to
 build a resume generator command (I update my resume infrequently and it's
 always a hassle getting my environment set up).
 
+## Why?
+
+This is nice for me to make sure I have the right environment to work on my
+resume. It's not very practical, I admit, to have people run a `nix run`
+command to generate the latest version of my resume (but it's kinda cool if
+you're into reproducibility and stuff). At some point I should have the latest
+version served somewhere on my site.
+
+tl;dr I just wanted an excuse to use nix.
+
 ## Usage
 
 Use the flake!
