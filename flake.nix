@@ -42,12 +42,12 @@
           pkgs.stdenvNoCC.mkDerivation rec {
             name = "alejandro-resume";
             src = self;
-            propogatedBuildInputs = [pkgs.coreutils nerdfonts-hack tex];
+            propagatedBuildInputs = [pkgs.coreutils nerdfonts-hack tex];
             phases = ["unpackPhase" "buildPhase" "installPhase"];
             buildPhase = ''
               cp build.sh alejandro-resume
               sed -i 's!PREFIX=""!PREFIX="${builtins.placeholder "out"}"!g' alejandro-resume
-              sed -i 's!PATH=""!PATH="${lib.makeBinPath propogatedBuildInputs}"!g' alejandro-resume
+              sed -i 's!PATH=""!PATH="${lib.makeBinPath propagatedBuildInputs}"!g' alejandro-resume
               sed -i 's!TEXVARS=""!TEXVARS="${texvars}"!g' alejandro-resume
               sed -i 's!NERDFONTS=""!NERDFONTS="${nerdfonts-hack}"!g' alejandro-resume
             '';
@@ -81,6 +81,10 @@
                 end-of-file-fixer.enable = true;
                 shellcheck.enable = true;
                 trim-trailing-whitespace.enable = true;
+                typos = {
+                  enable = true;
+                  always_run = true;
+                };
 
                 latexindent = {
                   enable = true;
