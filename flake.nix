@@ -27,13 +27,26 @@
       in {
         alejandro-resume = let
           lib = pkgs.lib;
-          nerdfonts-hack = pkgs.nerdfonts.override {
-            fonts = ["Hack"];
-          };
           tex = pkgs.texlive.combine {
-            inherit (pkgs.texlive) scheme-basic latex-bin latexmk enumitem multirow titlesec xcolor fontspec chktex latexindent etoolbox;
+            inherit
+              (pkgs.texlive)
+              scheme-basic
+              latex-bin
+              latexmk
+              enumitem
+              multirow
+              titlesec
+              xcolor
+              fontspec
+              chktex
+              latexindent
+              etoolbox
+              ;
           };
-          vars = ["email" "phonenumber"];
+          vars = [
+            "email"
+            "phonenumber"
+          ];
           # Create definitions like \def\email{$EMAIL}
           # Each \email command in the tex document will be populated by an EMAIL
           # variable (can be set as an environment variable)
@@ -42,14 +55,22 @@
           pkgs.stdenvNoCC.mkDerivation rec {
             name = "alejandro-resume";
             src = self;
-            propagatedBuildInputs = [pkgs.coreutils nerdfonts-hack tex];
-            phases = ["unpackPhase" "buildPhase" "installPhase"];
+            propagatedBuildInputs = [
+              pkgs.coreutils
+              pkgs.nerd-fonts.hack
+              tex
+            ];
+            phases = [
+              "unpackPhase"
+              "buildPhase"
+              "installPhase"
+            ];
             buildPhase = ''
               cp build.sh alejandro-resume
               sed -i 's!PREFIX=""!PREFIX="${builtins.placeholder "out"}"!g' alejandro-resume
               sed -i 's!PATH=""!PATH="${lib.makeBinPath propagatedBuildInputs}"!g' alejandro-resume
               sed -i 's!TEXVARS=""!TEXVARS="${texvars}"!g' alejandro-resume
-              sed -i 's!NERDFONTS=""!NERDFONTS="${nerdfonts-hack}"!g' alejandro-resume
+              sed -i 's!NERDFONTS=""!NERDFONTS="${pkgs.nerd-fonts.hack}"!g' alejandro-resume
             '';
             installPhase = ''
               mkdir -p $out/{bin,share}
