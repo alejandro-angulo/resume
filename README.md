@@ -2,6 +2,9 @@
 
 # Resume
 
+The canonical version of this repo lives on my personal git server at
+[https://git.alejandr0angul0.dev/alejandro-angulo/dotfiles](https://git.alejandr0angul0.dev/alejandro-angulo/dotfiles).
+
 This repository generates a PDF of my resume using
 [LaTeX](https://www.latex-project.org/). I used [flyx's
 article](https://flyx.org/nix-flakes-latex/) to help me create a nix flake to
