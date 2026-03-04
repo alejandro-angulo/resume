@@ -12,3 +12,4 @@ indent.log
 # devenv
 .devenv
 .pre-commit-config.yaml
+reference/

@@ -2,7 +2,7 @@
 
 \usepackage{array}
 \usepackage{enumitem}
-\usepackage[letterpaper, portrait, top=0.5in, right=0.5in, left=0.5in, bottom=2.5in]{geometry}
+\usepackage[letterpaper, portrait, top=0.5in, right=0.5in, left=0.5in, bottom=1.5in]{geometry}
 \usepackage[colorlinks=true, linkcolor=linkColor, urlcolor=linkColor, citecolor=linkColor, anchorcolor=linkColor]{hyperref}
 \usepackage{multirow}
 \usepackage{titlesec}
@@ -57,9 +57,7 @@
 	\end{tabular}
 }
 \fancyfoot[L]{
-	The source code for this document is available at \href{https://github.com/alejandro-angulo/resume}{https://github.com/alejandro-angulo/resume}\\
-	If you have \href{https://nixos.wiki/wiki/Nix_package_manager}{nix} installed you can run the command below to generate the latest version\\
-	\texttt{nix run --refresh --experimental-features 'nix-command flakes' github:alejandro-angulo/resume/main --  \textbackslash\\\ \ -e '\email' -p '\phonenumber'}  % chktex 8 chktex 32
+	The source code for this document is available at \href{https://github.com/alejandro-angulo/resume}{https://github.com/alejandro-angulo/resume}
 }
 \vspace*{-0.3in}
 \hspace*{-2em}
@@ -68,20 +66,32 @@
 	\subsection*{Sure  --- \textit{Staff Software Engineer}}
 	\subsubsection*{February 2020--Present}
 	\begin{itemize}
-		\item Architected an updated service-oriented platform to manage an
-		      insurance policy's entire lifecycle (quoting, binding, etc.). This new
-		      architecture has resulted in reducing time to onboard new clients from months
-		      to a few weeks (took us from a bespoke per-client solution to a generic
-		      configuration-driven solution).
-		\item Introduced tooling to help improve the company's developer
-		      experience (pre-commit hooks, automatic OpenAPI schema generation with
-		      TypeScript type generation, etc)
-		\item Help unstick teammates with various types of problems (failing
-		      test cases, developer environment troubleshooting, suggestions on
-		      implementation, etc.)
-		\item Lead refinements with the team to help ensure we're aligned on
-		      our technical direction and set up for success by coming up with
-		      realistic estimates
+		\item Replaced bespoke per-client insurance systems with a generic,
+		      configuration-driven platform to manage an insurance policy's entire
+		      lifecycle (quoting, binding, etc.), reducing client onboarding time
+		      from months to weeks.
+		\item Prototyped and led initiative to reduce configuration burden,
+		      establishing replication infrastructure and onboarding team members to scale
+		      development efforts.
+		\item Identified and resolved critical database lock contention issue
+		      under load, improving concurrent policy creation capacity from 20 to
+		      150+ requests (previously caused application crashes).
+		\item Discovered and mitigated critical security vulnerability in
+		      authentication service that allowed arbitrary credential generation;
+		      coordinated with security team and led initiative to implement cryptographic
+		      signing to prevent future exploits.
+		\item Designed OpenAPI schema generation pipeline and auto-generated
+		      TypeScript clients for frontend consumers, eliminating manual type maintenance
+		      across teams.
+		\item Served as primary incident responder, proactively monitoring
+		      system health via Datadog and Sentry, rapidly diagnosing issues and
+		      implementing fixes.
+		\item Mentored engineers through pairing sessions and onboarding,
+		      helping multiple teammates ramp up on complex initiatives and gain
+		      context on platform architecture.
+		\item Led learning sessions with engineers on topics like \href{AI
+			      agents}{https://github.com/alejandro-angulo/go-ai-agent} and \href{Model
+			      Context Protocol (MCP)}{https://github.com/alejandro-angulo/ts-mcp}
 	\end{itemize}
 	\subsection*{Everbridge (formerly NC4) --- \textit{Software Engineer}}
 	\subsubsection*{October 2018--February 2020}
@@ -113,18 +123,14 @@
 		      additional functionality (dynamic loading of patients, automating certain tasks
 		      for end users, etc.)
 	\end{itemize}
-	\subsection*{UC Davis College of Engineering IT Shared Services --- \textit{Applications Programmer}}
-	\subsubsection*{May 2014--April 2017}
-	\begin{itemize}
-		\item Managed departmental websites (most running WordPress) and wrote PHP scripts to scrape energy consumption data and visualize it
-	\end{itemize}
 \end{minipage}
 \hspace{0.08\textwidth}
 \begin{minipage}[t]{.3\textwidth}
 	\section*{About Me}
-	I'm a computer nerd. I've always enjoyed tinkering with computers and now I
-	get to make a living from it. I'm excited about designing maintainable systems
-	and am looking to join  team that values a good developer experience.
+	I'm a computer nerd with a decade of professional experience. I've always
+	enjoyed tinkering with computers and now I get to make a living from it. I'm
+	excited about designing maintainable systems and am looking to join a team that
+	values a good developer experience.
 	\\
 	\\
 	Outside of my professional work, I still like to tinker with computers. I've
@@ -137,15 +143,16 @@
 	\section*{Toolset}
 	Some tools/frameworks I use regularly in my current role:
 	\begin{itemize}
+		\item aws
+		\item django
 		\item docker
 		\item git
 		\item linux
-		\item python
-		\item aws
-		\item django
 		\item postgresql
+		\item python
 		\item rabbitmq
 		\item redis
+		\item opencode (AI coding agent)
 	\end{itemize}
 	\section*{Education}
 	\subsection*{Georgia Tech}
