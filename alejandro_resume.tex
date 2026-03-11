@@ -2,7 +2,7 @@
 
 \usepackage{array}
 \usepackage{enumitem}
-\usepackage[letterpaper, portrait, top=0.5in, right=0.5in, left=0.5in, bottom=1.5in]{geometry}
+\usepackage[letterpaper, portrait, top=1.0in, right=0.5in, left=0.5in, bottom=1.5in]{geometry}
 \usepackage[colorlinks=true, linkcolor=linkColor, urlcolor=linkColor, citecolor=linkColor, anchorcolor=linkColor]{hyperref}
 \usepackage{multirow}
 \usepackage{titlesec}
@@ -66,36 +66,30 @@
 	\subsection*{Sure  --- \textit{Staff Software Engineer}}
 	\subsubsection*{February 2020--Present}
 	\begin{itemize}
-		\item Replaced bespoke per-client insurance systems with a generic,
-		      configuration-driven platform to manage an insurance policy's entire
-		      lifecycle (quoting, binding, etc.), reducing client onboarding time
-		      from months to weeks.
-		\item Prototyped and led initiative to reduce configuration burden,
-		      establishing replication infrastructure and onboarding team members to scale
-		      development efforts.
-		\item Identified and resolved critical database lock contention issue
-		      under load, improving concurrent policy creation capacity from
-		      less than 20 to 150+ requests (previously caused application
-		      crashes).
-		\item Discovered and mitigated critical security vulnerability in
-		      authentication service that allowed arbitrary credential generation;
-		      coordinated with security team and led initiative to implement cryptographic
-		      signing to prevent future exploits.
+		\item Architected and led development of a configuration-driven platform
+		      replacing bespoke per-client systems, enabling the full policy lifecycle
+		      (quoting, binding, renewals, claims) to be managed through declarative
+		      configuration; reduced partner onboarding from months to weeks.
+		\item Led initiative to reduce configuration overhead by designing
+		      replication infrastructure for environment-specific data, enabling
+		      faster partner launches and reducing manual setup.
+		\item Resolved critical database lock contention issue under load,
+		      improving concurrent policy creation capacity from less than 20
+		      to 150+ requests (previously caused application crashes) just in
+		      time for partner marketing push.
+		\item Discovered a multi-year critical vulnerability in authentication
+		      service affecting all API endpoints that allowed arbitrary credential
+		      generation; led immediate remediation effort and coordinated with
+		      security team on long-term hardening strategy.
 		\item Designed OpenAPI schema generation pipeline and auto-generated
 		      TypeScript clients for frontend consumers, eliminating manual type maintenance
 		      across teams.
 		\item Served as primary incident responder, proactively monitoring
 		      system health via Datadog and Sentry, rapidly diagnosing issues and
 		      implementing fixes.
-		\item Mentored engineers through pairing sessions and onboarding,
-		      helping multiple teammates ramp up on complex initiatives and gain
-		      context on platform architecture.
-		\item Led learning sessions with engineers on topics like
-		      \href{https://github.com/alejandro-angulo/go-ai-agent}{AI agents}
-		      and \href{https://github.com/alejandro-angulo/ts-mcp}{Model
-			      Context Protocol (MCP)}
-		\item Championed end-to-end testing in CI, driving adoption and
-		      improving deployment confidence across teams.
+		\item Championed end-to-end testing in CI, driving cross-team adoption
+		      and improving deployment confidence; mentored engineers on testing
+		      practices and platform architecture through pairing and onboarding sessions.
 	\end{itemize}
 	\subsection*{Everbridge (formerly NC4) --- \textit{Software Engineer}}
 	\subsubsection*{October 2018--February 2020}
