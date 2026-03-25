@@ -17,7 +17,7 @@ jobs:
         run: |
           git fetch origin
           nix develop --accept-flake-config --impure --command bash -c \
-            "pre-commit run --from-ref origin/main --to-ref $GITHUB_SHA"
+            "prek run --from-ref origin/main --to-ref $GITHUB_SHA"
 
   build:
     needs: pre-commit-hooks
